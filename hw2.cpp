@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
   int i, j;
   string line;
   int n_line; // n_line x n_line grid
-  char * buf; // line buffer (char)
+  char* buf; // line buffer (char)
   int** mapp; // each grid possbile or not (1, 0)
   int** path; // possible number of path for each grid
   
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
   getline(inf, line);
   n_line = line.length();
   
-  buf = new char[n_line +1];
+  buf = new char[n_line + 1];
   mapp = new int*[n_line];
   path = new int*[n_line];
   
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     path[j] = new int[n_line];
   }
   
-  //make mapp matrix
+  // make mapp matrix
   strcpy(buf, line.c_stre());
   for (j = 0; j < n_line; j++){
     if (buf[j] == '0')
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
   for (i = 1; i < n_line; i++){
     getline(inf, line);
     strcpy(buf, line.c_str());
-    for (j=0; j < n_line; j++){
+    for (j = 0; j < n_line; j++){
       if (buf[j] == '0')
         mapp[i][j] = 1;
       else if (buf[j] == '1')
